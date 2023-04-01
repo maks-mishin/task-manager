@@ -11,10 +11,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'webserver',
-    '*.railway.app'
+    '*'
 ]
 
 INSTALLED_APPS = [
