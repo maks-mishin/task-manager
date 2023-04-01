@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'task_manager',
     'django_extensions',
-
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -93,10 +93,21 @@ USE_I18N = True
 
 USE_TZ = True
 
-DISABLE_COLLECTSTATIC = 0
+LANGUAGES = (
+    ('ru', 'Russian'),
+    ('en', 'English'),
+)
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
+
+STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BOOTSTRAP4 = {
+    'include_jquery': 'full'
+}
