@@ -1,25 +1,52 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Демо Bootstrap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Менеджер задач</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <script crossorigin="anonymous" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
-  <body>
-    <div class="px-4 py-5 my-5 text-center">
-      <img class="d-block mx-auto mb-4" src="https://bootstrap-4.ru/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h1 class="display-5 fw-bold">Менеджер задач</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">
-          Войдите, если у вас уже есть аккаунт или зарегистрируйтесь.
-        </p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Войти</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Регистрация</button>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <a class="navbar-brand" href="/">Менеджер задач</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Пользователи</a>
+          </li>
+
+        </ul>
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Вход</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Регистрация</a>
+            </li>
+
+        </ul>
+      </div>
+    </nav>
+    <div class="container wrapper flex-grow-1">
+      <h1 class="my-4"></h1>
+      <div class="card">
+        <div class="card-body p-5 bg-light">
+          <div class="display-4">Привет от Хекслета!</div>
+          <p class="lead">Практические курсы по программированию</p>
+          <hr>
+          <a class="btn btn-primary btn-lg" href="https://ru.hexlet.io">Узнать больше</a>
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <footer>
+      <div class="container my-5 pt-4 border-top">
+        <a target="_blank" href="https://ru.hexlet.io">Hexlet</a>
+      </div>
+    </footer>
   </body>
 </html>

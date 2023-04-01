@@ -9,10 +9,16 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
+DATABASE_URL = os.getenv('DATABASE_URL')
+
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'web-production-dfa14.up.railway.app'
+    'web-production-dfa14.up.railway.app',
+    'localhost',
+    '0.0.0.0',
+    'webserver',
+    '127.0.0.1',
 ]
 
 INSTALLED_APPS = [
@@ -22,6 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'task_manager',
+    'django_extensions',
+
 ]
 
 MIDDLEWARE = [
@@ -32,6 +41,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -55,10 +65,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'task_manager.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": dj_database_url.config(
+        default=DATABASE_URL, conn_max_age=1800
+    ),
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -84,6 +93,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+DISABLE_COLLECTSTATIC = 0
+
+STATIC_URL = "static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
