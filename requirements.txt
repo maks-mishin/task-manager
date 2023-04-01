@@ -30,3 +30,4 @@ stack-data==0.6.2
 traitlets==5.9.0
 typing_extensions==4.5.0
 wcwidth==0.2.6
+whitenoise==6.4.0
