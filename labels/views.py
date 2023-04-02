@@ -1,16 +1,13 @@
-from labels.forms import LabelForm
-from labels.models import Label
-from task_manager.mixins import CheckLoginMixin, CheckDeleteMixin
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy
-from django.views.generic import (ListView,
-                                  CreateView,
-                                  UpdateView,
-                                  DeleteView,
-                                  FormView)
+from django.views.generic import (CreateView, DeleteView, FormView, ListView,
+                                  UpdateView)
+
+from labels.forms import LabelForm
+from labels.models import Label
+from task_manager.mixins import CheckDeleteMixin, CheckLoginMixin
 
 
 class LabelListView(LoginRequiredMixin, CheckLoginMixin, ListView):

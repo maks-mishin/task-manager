@@ -1,5 +1,6 @@
-from django.test import TestCase, Client
+from django.test import Client, TestCase
 from django.urls import reverse
+
 from users.models import User
 
 
@@ -28,7 +29,10 @@ class TestApplicationUsers(TestCase):
         response = self.client.post(url, new_user, follow=True)
         self.assertRedirects(response, reverse('login'))
         messages = list(response.context['messages'])
-        self.assertEqual(str(messages[0]), 'Пользователь успешно зарегистрирован')
+        self.assertEqual(
+            str(messages[0]),
+            'Пользователь успешно зарегистрирован'
+        )
 
         self.assertEqual(User.objects.count(), count_users_before + 1)
         created_user = User.objects.last()
@@ -51,12 +55,15 @@ class TestApplicationUsers(TestCase):
 
         fake_credentials = {'username': 'yeltsin_fake',
                             'password': 'FakePass654!#_fake'}
-        response = self.client.post(reverse('login'), fake_credentials, follow=True)
+        response = self.client.post(
+            reverse('login'), fake_credentials, follow=True
+        )
         self.assertEqual(response.status_code, 200)
         errors = response.context['errors']
         self.assertEqual(
             str(errors[0]),
-            'Пожалуйста, введите правильные имя пользователя и пароль. Оба поля могут быть чувствительны к регистру.'
+            'Пожалуйста, введите правильные имя пользователя и пароль. '
+            'Оба поля могут быть чувствительны к регистру.'
         )
 
     def test_logout_user(self):

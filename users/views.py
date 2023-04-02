@@ -1,15 +1,15 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, FormView, UpdateView, DeleteView
-
-from django.contrib import messages
-
 from django.utils.translation import gettext
+from django.views.generic import (CreateView, DeleteView, FormView, ListView,
+                                  UpdateView)
 
+from task_manager.mixins import (CheckDeleteMixin, CheckLoginMixin,
+                                 CheckUpdateMixin)
 from users.forms import UserCreateForm, UserLoginForm
-from task_manager.mixins import CheckLoginMixin, CheckUpdateMixin, CheckDeleteMixin
 from users.models import User
 
 

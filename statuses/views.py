@@ -1,15 +1,13 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, FormView, UpdateView, DeleteView
-
-from django.contrib import messages
-
 from django.utils.translation import gettext
-from statuses.models import Status
+from django.views.generic import (CreateView, DeleteView, FormView, ListView,
+                                  UpdateView)
+
 from statuses.forms import StatusForm
-from task_manager.mixins import CheckLoginMixin, CheckUpdateMixin, CheckDeleteMixin
+from statuses.models import Status
+from task_manager.mixins import CheckDeleteMixin, CheckLoginMixin
 
 
 class StatusListView(LoginRequiredMixin, CheckLoginMixin, ListView):

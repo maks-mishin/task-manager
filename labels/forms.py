@@ -1,6 +1,7 @@
 from django.forms import ModelForm
-from labels.models import Label
 from django.utils.translation import gettext_lazy
+
+from labels.models import Label
 
 
 class LabelForm(ModelForm):
