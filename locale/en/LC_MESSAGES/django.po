@@ -263,11 +263,11 @@ msgid "Пользователь успешно зарегистрирован"
 msgstr "User has successfully registered"
 
 #: users/views.py:35
-msgid "Вы авторизованы"
+msgid "Вы залогинены"
 msgstr "You are authorized"
 
 #: users/views.py:43
-msgid "Вы вышли из системы"
+msgid "Вы разлогинены"
 msgstr "You are logged out"
 
 #: users/views.py:54
