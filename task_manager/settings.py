@@ -16,7 +16,7 @@ DATABASE_URL = os.getenv('DATABASE_URL')
 DEBUG = os.getenv('DEBUG', 'True')
 
 ALLOWED_HOSTS = [
-    'web-production-dfa14.up.railway.app',
+    'task-manager-production-90bb.up.railway.app',
     'localhost',
     '0.0.0.0',
     'webserver',
