@@ -13,7 +13,6 @@ django-filter==22.1
 exceptiongroup==1.1.1
 flake8==4.0.1
 gunicorn==20.1.0
--e git+ssh://git@github.com/maks-mishin/python-django-developer-project-52.git@cfafed12c8c506f0f3af2bf2388c5c29df8a48df#egg=hexlet_code
 idna==3.4
 iniconfig==2.0.0
 install==1.3.5
