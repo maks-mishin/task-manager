@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 14:39+0300\n"
+"POT-Creation-Date: 2023-04-02 13:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,100 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: templates/index.html:13
+
+#: templates/include/nav.html:4
 msgid "Менеджер задач"
 msgstr "Task manager"
 
-#: templates/index.html:20
+#: templates/include/nav.html:11
 msgid "Пользователи"
 msgstr "User"
 
-#: templates/index.html:27
+#: templates/include/nav.html:17 templates/users/sign_in.html:6
 msgid "Вход"
 msgstr "Login"
 
-#: templates/index.html:30
+#: templates/include/nav.html:20 templates/users/create.html:6
+#: templates/users/create.html:13
 msgid "Регистрация"
 msgstr "Signup"
 
-#: templates/index.html:40
+#: templates/include/nav.html:28
+msgid "Выход"
+msgstr ""
+
+#: templates/index.html:12
 msgid "Привет от Хекслета!"
 msgstr "Hello from Hexlet!"
 
-#: templates/index.html:41
+#: templates/index.html:13
 msgid "Практические курсы по программированию"
 msgstr "Practical courses of programming"
 
-#: templates/index.html:44
+#: templates/index.html:16
 msgid "Узнать больше"
 msgstr "Get more info"
+
+#: templates/users/delete.html:6
+#, fuzzy
+#| msgid "Пользователи"
+msgid "Удаление пользователя"
+msgstr "User deleting"
+
+#: templates/users/delete.html:8
+msgid "Вы уверены, что хотите удалить"
+msgstr "Are you sure you want to delete"
+
+#: templates/users/delete.html:11
+msgid "Да, удалить"
+msgstr "Yes, delete"
+
+#: templates/users/list.html:15
+#, fuzzy
+#| msgid "Пользователи"
+msgid "Имя пользователя"
+msgstr "Username"
+
+#: templates/users/list.html:16
+msgid "Полное имя"
+msgstr "Full name"
+
+#: templates/users/list.html:17
+msgid "Дата создания"
+msgstr "Created date"
+
+#: templates/users/list.html:29 templates/users/update.html:13
+msgid "Изменить"
+msgstr "Update"
+
+#: templates/users/list.html:31
+msgid "Удалить"
+msgstr "Delete"
+
+#: templates/users/sign_in.html:13
+msgid "Войти"
+msgstr "Login"
+
+#: templates/users/update.html:6
+#, fuzzy
+#| msgid "Пользователи"
+msgid "Изменение пользователя"
+msgstr "User updating"
+
+#: users/views.py:27
+msgid "Пользователь успешно зарегистрирован"
+msgstr "User has successfully registered"
+
+#: users/views.py:35
+msgid "Вы авторизованы"
+msgstr "You are authorized"
+
+#: users/views.py:43
+msgid "Вы вышли из системы"
+msgstr "You are logged out"
+
+#: users/views.py:54
+#, fuzzy
+#| msgid "Пользователи"
+msgid "Пользователь успешно изменён"
+msgstr "User has successfully changed"
