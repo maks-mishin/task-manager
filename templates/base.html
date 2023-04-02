@@ -6,6 +6,8 @@
 
 {% block bootstrap4_content %}
   <div class="container">
+    {% include 'include/nav.html' %}
     {% block content %}{% endblock %}
+    {% include 'include/footer.html' %}
   </div>
 {% endblock %}

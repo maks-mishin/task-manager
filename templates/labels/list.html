@@ -6,8 +6,8 @@
 {% block content %}
   <div class="container">
     {% bootstrap_messages %}
-    <h1 class="my-4">Статусы</h1>
-    <a class="nav-link" href="{% url 'create_status' %}">{% trans 'Создать статус' %}</a>
+    <h1 class="my-4">Метки</h1>
+    <a class="nav-link" href="{% url 'create_label' %}">{% trans 'Создать метку' %}</a>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -18,15 +18,15 @@
         </tr>
       </thead>
       <tbody>
-      {% for status in statuses %}
+      {% for label in labels %}
         <tr>
-          <td>{{ status.id }}</td>
-          <td>{{ status.name }}</td>
-          <td>{{ user.created_at|date:"d.m.Y H:i" }}</td>
+          <td>{{ label.id }}</td>
+          <td>{{ label.name }}</td>
+          <td>{{ label.created_at|date:"d.m.Y H:i" }}</td>
           <td>
-            <a class="text-decoration-none" href="{% url 'update_status' status.id %}">{% trans 'Изменить' %}</a>
+            <a class="text-decoration-none" href="{% url 'update_label' label.id %}">{% trans 'Изменить' %}</a>
             <br>
-            <a class="text-decoration-none" href="{% url 'delete_status' status.id %}">{% trans 'Удалить' %}</a>
+            <a class="text-decoration-none" href="{% url 'delete_label' label.id %}">{% trans 'Удалить' %}</a>
           </td>
         </tr>
       {% endfor %}

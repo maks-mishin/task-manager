@@ -32,8 +32,11 @@ INSTALLED_APPS = [
     'task_manager',
     'users',
     'statuses',
+    'tasks',
+    'labels',
     'django_extensions',
     'bootstrap4',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -45,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'task_manager.urls'
@@ -116,3 +120,5 @@ BOOTSTRAP4 = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']

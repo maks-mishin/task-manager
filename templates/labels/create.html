@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+    <h1 class="my-4">{% trans 'Создать метку' %}</h1>
+    {% bootstrap_messages %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {% bootstrap_form form %}
+        </div>
+        <input class="btn btn-primary" type="submit" value="{% trans 'Создать' %}">
+    </form>
+{% endblock %}
