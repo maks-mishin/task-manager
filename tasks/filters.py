@@ -23,9 +23,9 @@ class TaskFilter(django_filters.FilterSet):
     executor = django_filters.ChoiceFilter(label=gettext_lazy('Исполнитель'),
                                            choices=executors)
 
-    labels = Label.objects.values_list('id', 'name', named=True).all()
-    label = django_filters.ChoiceFilter(label=gettext_lazy('Метка'),
-                                        choices=labels)
+    all_labels = Label.objects.values_list('id', 'name', named=True).all()
+    labels = django_filters.ChoiceFilter(label=gettext_lazy('Метка'),
+                                         choices=all_labels)
 
     my_tasks = django_filters.BooleanFilter(
         label=gettext_lazy('Только свои задачи'),
@@ -41,4 +41,4 @@ class TaskFilter(django_filters.FilterSet):
 
     class Meta:
         model = Task
-        fields = ['status', 'executor', 'label']
+        fields = ['status', 'executor', 'labels']

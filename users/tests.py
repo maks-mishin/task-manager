@@ -15,7 +15,7 @@ class TestApplicationUsers(TestCase):
         url = reverse('create_user')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'Регистрация')
+        self.assertContains(response, 'Зарегистрировать')
 
         new_user = {
             'first_name': 'test',
@@ -47,7 +47,7 @@ class TestApplicationUsers(TestCase):
         self.assertRedirects(response, reverse('index'))
 
         messages = list(response.context['messages'])
-        self.assertEqual(str(messages[0]), 'Вы авторизованы')
+        self.assertEqual(str(messages[0]), 'Вы залогинены')
 
         fake_credentials = {'username': 'yeltsin_fake',
                             'password': 'FakePass654!#_fake'}
@@ -65,7 +65,7 @@ class TestApplicationUsers(TestCase):
         self.assertEqual(response.status_code, 200)
 
         messages = list(response.context['messages'])
-        self.assertEqual(str(messages[0]), 'Вы вышли из системы')
+        self.assertEqual(str(messages[0]), 'Вы разлогинены')
 
     def test_update(self):
         user = self.first_user
