@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "task_manager"
+name = "hexlet-code"
 version = "0.1.0"
 description = "Task manager"
 authors = ["Maks Mishin <maks.mishinFZ@gmail.com>"]
 readme = "README.md"
-packages = [{include = "task_manager"}]
+packages = [{include = "hexlet_code"}]
 repository = "https://github.com/maks-mishin/python-django-developer-project-52"
 
 [tool.poetry.dependencies]
