@@ -1,30 +1,30 @@
 [tool.poetry]
-name = "hexlet-code"
+name = "task_manager"
 version = "0.1.0"
 description = "Task manager"
 authors = ["Maks Mishin <maks.mishinFZ@gmail.com>"]
 readme = "README.md"
-packages = [{include = "hexlet_code"}]
+packages = [{include = "task_manager"}]
 repository = "https://github.com/maks-mishin/python-django-developer-project-52"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-django = "^4.1.7"
-python-dotenv = "^1.0.0"
-dj-database-url = "^0.5.0"
-flake8 = "^4.0.1"
-isort = "^5.12.0"
-psycopg2-binary = "^2.9.5"
+Django = "^4.0.6"
+python-dotenv = "^0.20.0"
 gunicorn = "^20.1.0"
-django-extensions = "^3.2.1"
-ipython = "^8.12.0"
-pytest = "^7.2.2"
+django-bootstrap4 = "^22.1"
+django-filter = "^22.1"
 rollbar = "^0.16.3"
-whitenoise = "^6.4.0"
-django-bootstrap4 = "^22.3"
-django-filter = "^23.1"
+dj-database-url = "^0.5.0"
+whitenoise = "^6.2.0"
 
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+PyYAML = "^6.0"
+pytest = "^7.1.2"
+pytest-cov = "^3.0.0"
+pytest-django = "^4.5.2"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
