@@ -1,7 +1,8 @@
-from pathlib import Path
 import os
-from dotenv import load_dotenv
+from pathlib import Path
+
 import dj_database_url
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
+    'users',
     'django_extensions',
     'bootstrap4',
 ]
@@ -85,7 +87,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -111,3 +113,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BOOTSTRAP4 = {
     'include_jquery': 'full'
 }
+
+AUTH_USER_MODEL = 'users.User'

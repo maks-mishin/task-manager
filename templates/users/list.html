@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% load i18n %}
+
+{% block content %}
+  {% include 'include/nav.html' %}
+  <div class="container">
+    {% bootstrap_messages %}
+    <h1 class="my-4">Пользователи</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>{% trans 'Имя пользователя' %}</th>
+          <th>{% trans 'Полное имя' %}</th>
+          <th>{% trans 'Дата создания' %}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.first_name }} {{ user.last_name }}</td>
+          <td>{{ user.date_joined|date:"d.m.Y H:i" }}</td>
+          <td>
+            <a class="text-decoration-none" href="{% url 'update_user' pk=user.id %}">{% trans 'Изменить' %}</a>
+            <br>
+            <a class="text-decoration-none" href="{% url 'delete_user' pk=user.id %}">{% trans 'Удалить' %}</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- /.container-fluid -->
+  {% include 'include/footer.html' %}
+{% endblock %}

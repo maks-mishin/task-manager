@@ -23,7 +23,7 @@ msgstr "Task manager"
 
 #: templates/index.html:20
 msgid "Пользователи"
-msgstr "Users"
+msgstr "User"
 
 #: templates/index.html:27
 msgid "Вход"

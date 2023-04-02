@@ -1,37 +1,33 @@
 MANAGE := poetry run python manage.py
 
-.PHONY: run
 run:
 	@$(MANAGE) runserver
 
-.PHONY: test
 test:
-	@poetry run pytest
+	@$(MANAGE) test -v 2
 
-.PHONY: setup
 setup: db-clean install migrate
 
-.PHONY: install
 install:
 	@poetry install
 
-.PHONY: db-clean
 db-clean:
 	@rm db.sqlite3 || true
 
-.PHONY: migrate
 migrate:
 	@$(MANAGE) makemigrations
 	@$(MANAGE) migrate
 
-.PHONY: shell
 shell:
 	@$(MANAGE) shell_plus --ipython
 
-.PHONY: lint
 lint:
+	@poetry run isort task_manager
 	@poetry run flake8 task_manager
 
-.PHONY: sort
-sort:
-	@poetry run isort task_manager
+trans:
+	@poetry run django-admin makemessages --ignore="static" --ignore=".env" --ignore="venv" -l en
+	@poetry run django-admin compilemessages
+
+super:
+	@poetry run python manage.py createsuperuser
