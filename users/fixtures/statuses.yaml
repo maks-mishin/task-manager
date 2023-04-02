@@ -1,0 +1,10 @@
+-   model: statuses.status
+    pk: 1
+    fields:
+        name: Бэклог
+        created_at: 1999-09-15 18:25:26.481923+00:00
+-   model: statuses.status
+    pk: 2
+    fields:
+        name: Готово
+        created_at: 2022-07-19 18:29:45.031023+00:00

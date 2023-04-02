@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.utils.translation import gettext
 
 from users.forms import UserCreateForm, UserLoginForm
-from users.mixins import CheckLoginMixin, CheckUpdateMixin, CheckDeleteMixin
+from task_manager.mixins import CheckLoginMixin, CheckUpdateMixin, CheckDeleteMixin
 from users.models import User
 
 

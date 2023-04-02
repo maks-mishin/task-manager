@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% load i18n %}
+
+{% block content %}
+  {% include 'include/nav.html' %}
+  <div class="container">
+    {% bootstrap_messages %}
+    <h1 class="my-4">Статусы</h1>
+    <a class="nav-link" href="{% url 'create_status' %}">{% trans 'Создать статус' %}</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>{% trans 'Имя' %}</th>
+          <th>{% trans 'Дата создания' %}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for status in statuses %}
+        <tr>
+          <td>{{ status.id }}</td>
+          <td>{{ status.name }}</td>
+          <td>{{ user.created_at|date:"d.m.Y H:i" }}</td>
+          <td>
+            <a class="text-decoration-none" href="{% url 'update_status' status.id %}">{% trans 'Изменить' %}</a>
+            <br>
+            <a class="text-decoration-none" href="{% url 'delete_status' status.id %}">{% trans 'Удалить' %}</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- /.container-fluid -->
+  {% include 'include/footer.html' %}
+{% endblock %}

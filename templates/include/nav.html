@@ -7,9 +7,15 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'list_users' %}">{% trans 'Пользователи' %}</a>
-      </li>
+      {% if not user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'list_users' %}">{% trans 'Пользователи' %}</a>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'list_statuses' %}">{% trans 'Статусы' %}</a>
+        </li>
+      {% endif %}
     </ul>
     <ul class="navbar-nav">
       {% if not user.is_authenticated %}
